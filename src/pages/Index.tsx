@@ -2,29 +2,28 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import { Play, Check, X, ChevronDown, ChevronsDown, Flame, Clock, ShieldCheck, Zap, BookOpen, Trophy, Crown, Library, Dices, Palette, Type, CheckSquare, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import tshirt1 from "@/assets/01.png";
-import tshirt2 from "@/assets/02.png";
-import tshirt3 from "@/assets/03.png";
-import tshirt4 from "@/assets/04.png";
-import tshirt5 from "@/assets/05.png";
-import tshirt6 from "@/assets/06.png";
-import tshirt7 from "@/assets/07.png";
-import tshirt8 from "@/assets/08.png";
-import tshirt9 from "@/assets/09.png";
-import tshirt10 from "@/assets/10.png";
-import tshirt11 from "@/assets/11.png";
-import tshirt12 from "@/assets/12.png";
+import tshirt1 from "@/assets/Molde01.png";
+import tshirt2 from "@/assets/Molde02.png";
+import tshirt3 from "@/assets/Molde03.png";
+import tshirt4 from "@/assets/Molde04.png";
+import tshirt5 from "@/assets/Molde05.png";
+import tshirt6 from "@/assets/Molde06.png";
+import tshirt7 from "@/assets/Brinde01.png";
+import tshirt8 from "@/assets/Brinde02.png";
+import tshirt9 from "@/assets/Brinde03.png";
+import tshirt10 from "@/assets/Brinde04.png";
+import tshirt11 from "@/assets/Brinde05.png";
 
-import HeroCopa from "@/assets/HeroCigano.png";
+import HeroCopa from "@/assets/BrindeHero.png";
 import BonusCard from "@/components/BonusCard";
 import PremiumOfferModal from "@/components/PremiumOfferModal";
 import Feedback01 from "@/assets/Feedback01.png";
 import Feedback02 from "@/assets/Feedback02.png";
 import Feedback03 from "@/assets/Feedback03.png";
 import GarantiaImage from "@/assets/Garantia.webp";
-import Bonus01 from "@/assets/GuiaBonus.png";
-import Bonus02 from "@/assets/PolarBonus.png";
-import Bonus03 from "@/assets/TiragensBonus.png";
+import Bonus01 from "@/assets/FadaBonus.png";
+import Bonus02 from "@/assets/DesenhosBonus.png";
+import Bonus03 from "@/assets/ConsultorioBonus.png";
 
 const CHECKOUT_URL = "#checkout";
 const PREMIUM_CHECKOUT_URL = "https://pay.wiapy.com/ulk84ywIP_";
@@ -70,29 +69,28 @@ const moreImages = [
   { src: tshirt9, alt: "Mapa Mental 9" },
   { src: tshirt10, alt: "Mapa Mental 10" },
   { src: tshirt11, alt: "Mapa Mental 11" },
-  { src: tshirt12, alt: "Mapa Mental 12" },
 ];
 
 
 
 const bonuses = [
   {
-    title: "Guia de Combinações",
-    desc: "Veja como as cartas se combinam entre si e o significado que cada junção assume na leitura.",
+    title: "Kit Fada do Dente Premium",
+    desc: "Cartas, certificados, envelopes, porta dentinhos, vales surpresa e lembranças prontas para imprimir e transformar a queda dos dentes de leite em uma experiência mágica.",
     old: "R$9,90",
     imageSrc: Bonus01,
     isBonus: true,
   },
   {
-    title: "Modelos de Tiragens",
-    desc: "Receba modelos prontos de tiragens com o passo a passo de como dispor e interpretar cada carta em cada posição.",
+    title: "50 Desenhos para Colorir Exclusivos",
+    desc: "Ilustrações educativas e divertidas com temática odontológica para entreter as crianças enquanto aprendem sobre saúde bucal.",
     old: "R$14,90",
     imageSrc: Bonus03,
     isBonus: true,
   },
   {
-    title: "Guia das Polaridades das Cartas",
-    desc: "Descubra quais cartas são positivas, negativas e neutras — e como isso muda completamente a leitura das combinações.",
+    title: "Livro Infantil Conhecendo o Consultório",
+    desc: "Uma história ilustrada que apresenta o consultório odontológico de forma divertida, ajudando a reduzir o medo da criança antes e durante o atendimento.",
     old: "R$24,90",
     imageSrc: Bonus02,
     isBonus: true,
@@ -205,7 +203,7 @@ const Index = () => {
 
             <div className="space-y-6 text-lg sm:text-base text-black/70 leading-relaxed">
               <p className="font-medium text-lg sm:text-lg">
-               Aprenda a ler e interpretar todas as 36 Cartas do Baralho Cigano de forma Simples, Visual e Organizada.
+              Receba +60 modelos de brindes odontológicos infantis para encantar os seus Mini Pacientes e transformar as suas consultas em experiência lúdicas e divertidas.
               </p>
             </div>
           </div>
@@ -222,7 +220,7 @@ const Index = () => {
         {/* T-SHIRTS */}
         <section className="py-6 border-t border-border">
           <h2 className={`${HeadlineFont} text-3xl sm:text-4xl text-center text-foreground`}>
-            Veja alguns dos mapas mentais que você vai receber
+            Veja alguns dos moldes que você vai receber
           </h2>
           <p className="mt-2 text-sm text-muted-foreground text-center">Deslize para o lado pra ver mais</p>
 
@@ -230,7 +228,7 @@ const Index = () => {
             {tshirts.map((t, index) => (
               <div
                 key={`${t.alt}-${index}`}
-                className="snap-center shrink-0 w-[100%] aspect-[16/9] rounded-2xl overflow-hidden"
+                className="snap-center shrink-0 w-[90vw] overflow-hidden"
               >
                 <img src={t.src} alt={t.alt} loading="lazy" className="w-full h-full object-contain block" />
               </div>
@@ -248,15 +246,11 @@ const Index = () => {
               },
               { 
                 icon: "✂️", 
-                title: "Cartas e seus significados explicados de forma simples.",
-              },
-              { 
-                icon: "✏️", 
-                title: "Material visual, bonito e fácil de entender.",
+                title: "Certificados, medalhas, brindes e jogos.",
               },
               { 
                 icon: "✅", 
-                title: "Ideal para estudos.",
+                title: "Ideal para transformar a consulta em uma experiência positiva e reforçar a higiene bucal.",
               },
             ].map((item, idx) => (
               <div 
@@ -294,13 +288,11 @@ const Index = () => {
         <section className="mt-4">
           <div className="space-y-3">
             {[
-              { emoji: "✅", text: "36 Mapas mentais prontos das cartas do baralho cigano." },
-              { emoji: "✅", text: "Significado explicado de forma simples." },
-              { emoji: "✅", text: "Palavras-chave, pontos positivos e desafios." },
-              { emoji: "✅", text: "Significado geral e conselho." },
-              { emoji: "✅", text: "Interpretação no amor." },
-              { emoji: "✅", text: "Interpretação no financeiro." },
-              { emoji: "✅", text: "Interpretação na espiritualidade." },
+              { emoji: "✅", text: "+60 Brindes infantis prontos para imprimir e usar."  },
+              { emoji: "✅", text: "Certificados e medalhas." },
+              { emoji: "✅", text: "Jogos educativos e atidades para colorir." },
+              { emoji: "✅", text: "Calendários temáticos para rotinas." },
+              { emoji: "✅", text: "Decoração para consultório." },
               { emoji: "✅", text: "Material em PDF para acessar, estudar e imprimir." },
               { emoji: "🎁", text: "Bônus exclusivos no Plano Completo." },
             ].map((item, idx) => (
@@ -329,17 +321,12 @@ const Index = () => {
           </div>
 
           {/* NEW CAROUSEL */}
-          <section className="py-6 border-t border-border mt-4">
-            <h2 className={`${HeadlineFont} text-3xl sm:text-4xl text-center text-foreground`}>
-              Mais mapas mentais que você vai receber
-            </h2>
-            <p className="mt-2 text-sm text-muted-foreground text-center">Deslize para o lado pra ver mais</p>
-
+          <section className="py-6 mt-2">
             <div ref={moreCarouselRef} className="mt-4 -mx-4 px-4 flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
               {moreImages.map((item, index) => (
                 <div
                   key={`${item.alt}-${index}`}
-                  className="snap-center shrink-0 w-[100%] aspect-[16/9] rounded-2xl overflow-hidden"
+                  className="snap-center shrink-0 w-[100%] w-[85%] aspect-[3/4] rounded-2xl overflow-hidden"
                 >
                   <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-contain block" />
                 </div>
@@ -352,7 +339,7 @@ const Index = () => {
         <section className="py-6 mt-4">
           <div className="bg-accent -mx-4 px-6 py-10 mb-8 text-center text-white">
             <p className="text-lg sm:text-xl font-medium leading-tight mb-6">
-              🎁 Além dos <strong> 36 Mapas Mentais das Cartas do Baralho Cigano</strong>, ao adquirir o <br />
+              🎁 Além dos <strong> 60 Brindes Odontológicos</strong>, ao adquirir o <br />
               Plano Completo você vai levar <strong>3 SUPER BÔNUS!</strong>
             </p>
             
@@ -421,7 +408,7 @@ const Index = () => {
                 <span className="text-4xl font-extrabold text-foreground">R$10,00</span>
               </div>
               <ul className="mt-4 space-y-2 text-sm text-left self-start">
-                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-muted-foreground mt-0.5" /> 36 Mapas Mentais das Cartas do Baralho Cigano</li>
+                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-muted-foreground mt-0.5" /> +60 Brindes infantis prontos para imprimir e usar.</li>
                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-muted-foreground mt-0.5" /> Material em PDF para acessar e estudar</li>
                 <li className="flex items-start gap-2"><X className="w-4 h-4 text-destructive mt-0.5" /> Não inclui os bônus do Plano Completo</li>
               </ul>
@@ -475,12 +462,12 @@ const Index = () => {
 
                 <ul className="mt-5 space-y-2.5 text-medium text-left self-start">
                   {[
-                    { text: "36 Mapas Mentais das Cartas do Baralho Cigano", isBonus: false },
-                    { text: "Material em PDF para acessar e estudar", isBonus: false },
-                    { text: "Cartas e seus significados explicados de forma simples.", isBonus: false },
-                    { text: "Guia de Combinações", isBonus: true, bonusNum: 1 },
-                    { text: "Modelos de Tiragens", isBonus: true, bonusNum: 2 },
-                    { text: "Guia das Polaridades das Cartas", isBonus: true, bonusNum: 3 },
+                    { text: "+60 Brindes infantis prontos para imprimir e usar.", isBonus: false },
+                    { text: "Certificados e medalhas.", isBonus: false },
+                    { text: "Jogos educativos e atidades para colorir.", isBonus: false },
+                    { text: "Kit Fada do Dente Premium", isBonus: true, bonusNum: 1 },
+                    { text: "50 Desenhos para Colorir Exclusivos", isBonus: true, bonusNum: 2 },
+                    { text: "Livro Infantil Conhecendo o Consultório", isBonus: true, bonusNum: 3 },
                     { text: "Envio imediato por e-mail (PDF pronto para imprimir)", isBonus: false, },
                     { text: "Acesso vitalício ao material", isBonus: false, },
                   ].map((item, idx) => (

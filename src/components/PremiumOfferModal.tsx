@@ -52,9 +52,9 @@ const PremiumOfferModal: React.FC<PremiumOfferModalProps> = ({
             
             <ul className="space-y-2.5 text-left">
               {[
-                "Bônus 1 - Guia de Combinações",
-                "Bônus 2 - Modelos de Tiragens",
-                "Bônus 3 - Guia das Polaridades das Cartas",
+                "Bônus 1 - Kit Fada do Dente Premium",
+                "Bônus 2 - 50 Desenhos para Colorir Exclusivos",
+                "Bônus 3 - Livro Infantil Conhecendo o Consultório",
               ].map((bonus, idx) => (
                 <li key={idx} className="flex items-center gap-2.5">
                   <div className="flex-shrink-0 w-5 h-5 rounded-md bg-success flex items-center justify-center">
