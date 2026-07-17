@@ -8,6 +8,12 @@ import tshirt3 from "@/assets/03.png";
 import tshirt4 from "@/assets/04.png";
 import tshirt5 from "@/assets/05.png";
 import tshirt6 from "@/assets/06.png";
+import tshirt7 from "@/assets/07.png";
+import tshirt8 from "@/assets/08.png";
+import tshirt9 from "@/assets/09.png";
+import tshirt10 from "@/assets/10.png";
+import tshirt11 from "@/assets/11.png";
+import tshirt12 from "@/assets/12.png";
 
 import HeroCopa from "@/assets/HeroCigano.png";
 import BonusCard from "@/components/BonusCard";
@@ -58,6 +64,15 @@ const tshirts = [
   { src: tshirt6, alt: "Estampa Cristo é Rei" },
 ];
 
+const moreImages = [
+  { src: tshirt7, alt: "Mapa Mental 7" },
+  { src: tshirt8, alt: "Mapa Mental 8" },
+  { src: tshirt9, alt: "Mapa Mental 9" },
+  { src: tshirt10, alt: "Mapa Mental 10" },
+  { src: tshirt11, alt: "Mapa Mental 11" },
+  { src: tshirt12, alt: "Mapa Mental 12" },
+];
+
 
 
 const bonuses = [
@@ -100,8 +115,10 @@ const feedbackImages = [
 const Index = () => {
   const { m, s } = useCountdown(14);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentMoreSlide, setCurrentMoreSlide] = useState(0);
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const moreCarouselRef = useRef<HTMLDivElement>(null);
 
   const handleBasicClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -132,6 +149,23 @@ const Index = () => {
       });
     }
   }, [currentSlide]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentMoreSlide((prev) => (prev + 1) % moreImages.length);
+    }, 2000); // Muda a imagem a cada 1 segundos
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (moreCarouselRef.current) {
+      const scrollAmount = currentMoreSlide * (moreCarouselRef.current.children[0].clientWidth + 16); // 16px de gap
+      moreCarouselRef.current.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  }, [currentMoreSlide]);
 
   return (
     <main className="bg-background text-foreground">
@@ -293,6 +327,25 @@ const Index = () => {
               É só imprimir e usar.
             </p>
           </div>
+
+          {/* NEW CAROUSEL */}
+          <section className="py-6 border-t border-border mt-4">
+            <h2 className={`${HeadlineFont} text-3xl sm:text-4xl text-center text-foreground`}>
+              Mais mapas mentais que você vai receber
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground text-center">Deslize para o lado pra ver mais</p>
+
+            <div ref={moreCarouselRef} className="mt-4 -mx-4 px-4 flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+              {moreImages.map((item, index) => (
+                <div
+                  key={`${item.alt}-${index}`}
+                  className="snap-center shrink-0 w-[100%] aspect-[16/9] rounded-2xl overflow-hidden"
+                >
+                  <img src={item.src} alt={item.alt} loading="lazy" className="w-full h-full object-contain block" />
+                </div>
+              ))}
+            </div>
+          </section>
         </section>
 
         {/* BONUSES */}
