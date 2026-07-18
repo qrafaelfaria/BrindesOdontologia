@@ -203,7 +203,7 @@ const Index = () => {
 
             <div className="space-y-6 text-lg sm:text-base text-black/70 leading-relaxed">
               <p className="font-medium text-lg sm:text-lg">
-              Receba +60 modelos de brindes odontológicos infantis para encantar os seus Mini Pacientes e transformar as suas consultas em experiência lúdicas e divertidas.
+              Receba +60 modelos de brindes odontológicos infantis para encantar os seus Mini Pacientes e transformar as suas consultas em experiências lúdicas e divertidas.
               </p>
             </div>
           </div>
