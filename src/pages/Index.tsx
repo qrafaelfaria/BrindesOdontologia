@@ -182,7 +182,7 @@ const Index = () => {
           </div>
 
           <h1 className={`${HeadlineFont} text-[44px] sm:text-5xl text-primary`}>
-            <span className="text-foreground">60 Brindes para Dentistas Infantis</span> Prontos para Imprimir e Usar
+            <span className="text-foreground">60 Brindes Odontológicos</span> Prontos para Imprimir e Usar
             <br />
           </h1>
 
