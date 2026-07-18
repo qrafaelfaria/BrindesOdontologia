@@ -17,9 +17,9 @@ import tshirt11 from "@/assets/Brinde05.png";
 import HeroCopa from "@/assets/BrindeHero.png";
 import BonusCard from "@/components/BonusCard";
 import PremiumOfferModal from "@/components/PremiumOfferModal";
-import Feedback01 from "@/assets/Feedback01.png";
-import Feedback02 from "@/assets/Feedback02.png";
-import Feedback03 from "@/assets/Feedback03.png";
+import Feedback01 from "@/assets/Relato01.png";
+import Feedback02 from "@/assets/Relato02.png";
+import Feedback03 from "@/assets/Relato03.png";
 import GarantiaImage from "@/assets/Garantia.webp";
 import Bonus01 from "@/assets/FadaBonus.png";
 import Bonus02 from "@/assets/DesenhosBonus.png";
@@ -85,14 +85,14 @@ const bonuses = [
     title: "50 Desenhos para Colorir Exclusivos",
     desc: "Ilustrações educativas e divertidas com temática odontológica para entreter as crianças enquanto aprendem sobre saúde bucal.",
     old: "R$14,90",
-    imageSrc: Bonus03,
+    imageSrc: Bonus02,
     isBonus: true,
   },
   {
     title: "Livro Infantil Conhecendo o Consultório",
     desc: "Uma história ilustrada que apresenta o consultório odontológico de forma divertida, ajudando a reduzir o medo da criança antes e durante o atendimento.",
     old: "R$24,90",
-    imageSrc: Bonus02,
+    imageSrc: Bonus03,
     isBonus: true,
   },
 ];
